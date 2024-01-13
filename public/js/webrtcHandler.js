@@ -12,9 +12,16 @@ const defaultConstraints = {
     video:true
 }
 //stun getting the ice candidate
+// const configuration = {
+//     "iceServers": [{ "url": "stun:stun.1.google.com:19302" }] 
+// }
+
+
 const configuration = {
-    "iceServers": [{ "url": "stun:stun.1.google.com:19302" }] 
+    "iceServers": [ { urls: 'stun:freestun.net:5350' }, { urls: 'turns:freestun.tel:5350', username: 'free', credential: 'free' }] 
 }
+
+
 
 export const getLocalPreview = () => {
     navigator.mediaDevices.getUserMedia(defaultConstraints).then((stream) => {
